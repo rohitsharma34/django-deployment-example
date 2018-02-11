@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QWeather - {% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'weather/images/favicon.png' %}"/>
+    <link rel="stylesheet" href="{% static 'weather/css/vendor/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'weather/css/base.css' %}" />
+    {% block styles %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                <header>
+                    <a href="{% url 'weather:home' %}">
+                        <img id="logo-header"
+                             class="img-responsive"
+                             src="{% static 'weather/images/logo.png' %}"
+                             onmouseover="this.src='{% static 'weather/images/logo-glow.png' %}'"
+                             onmouseout="this.src='{% static 'weather/images/logo.png' %}'">
+                    </a>
+                    {% include 'weather/searchform.html' %}
+                </header>
+                <main id="content">
+                    {% block content %}{% endblock %}
+                </main>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

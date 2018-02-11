@@ -1,0 +1,19 @@
+{% extends 'weather/base.html' %}
+
+{% load static %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block styles %}<link rel="stylesheet" href="{% static 'weather/css/city_list.css' %}" />{% endblock %}
+
+{% block content %}
+    {% for city in city_list %}
+        <p><a class="city-block" href="{% url 'weather:city_weather' city.id %}">
+            {{ city.name }} ({{ city.country.name }})
+        </a></p>
+    {% empty %}
+        <p>No cities found</p>
+    {% endfor %}
+
+  
+{% endblock %}

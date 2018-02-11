@@ -1,0 +1,9 @@
+a.city-block {
+    display: block;
+    height: 45px;
+    padding: 12px;
+    background-color: #0d0d0d;
+    border: #191919 solid 1px;
+    border-radius: 4px;
+    color: #d3d3d3;
+}

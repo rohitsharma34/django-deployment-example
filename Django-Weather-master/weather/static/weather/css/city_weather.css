@@ -1,0 +1,25 @@
+h2 {
+    font-weight: bold;
+    font-size: 23pt;
+}
+
+#weather {
+    margin-bottom: 20px;
+}
+
+#temperature {
+    font-weight: bold;
+    font-size: 38pt;
+    line-height: 38pt;
+}
+
+#weather-title {
+    font-size: 23pt;
+    line-height: 23pt;
+}
+
+.weather-descr {
+    font-size: 13pt;
+    line-height: 17pt;
+    color: #a8a8a8;
+}

@@ -1,0 +1,17 @@
+{% extends 'weather/base.html' %}
+{% load static %}
+
+{% block title %}{{ city_weather.city_name }}{% endblock %}
+
+{% block styles %}<link rel="stylesheet" href="{% static 'weather/css/city_weather.css' %}" />{% endblock %}
+
+{% block content %}
+    <div id="weather">
+        {% if city_weather.error %}
+            <h2>Cannot get weather (HTTP Error)</h2>
+        {% else %}
+            {% include 'weather/city_weather_partial.html' %}
+        {% endif %}
+    </div>
+
+{% endblock %}
